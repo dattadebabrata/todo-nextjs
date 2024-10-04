@@ -1,0 +1,14 @@
+a {
+  text-decoration: none !important;
+  color: unset !important;
+
+  &:hover, &:active {
+    text-decoration: none !important;
+    color: unset !important;
+  }
+
+}
+
+* {
+  box-sizing: border-box;
+}

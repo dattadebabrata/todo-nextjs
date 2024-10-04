@@ -1,0 +1,368 @@
+@import "variables";
+
+// padding, margin, width, height helpers --> Start
+$sizes: (0, 3, 5, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 32, 35, 40, 45, 50, 55, 60, 70, 75, 80, 85, 90, 95, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $sizes {
+
+  .font-size-#{$space} {
+    font-size: #{$space+'px'};
+  }
+
+  .height-vh-#{$space} {
+    height: #{$space+'vh'};
+  }
+  // in percentage // usage .width-{percentage}
+  .width-vw-#{$space} {
+    width: #{$space+'vw'};
+  }
+
+  .max-height-vh-#{$space} {
+    max-height: #{$space+'vh'};
+  }
+  // in percentage // usage .width-{percentage}
+  .max-width-vw-#{$space} {
+    max-width: #{$space+'vw'};
+  }
+
+  // in percentage // usage .height-{percentage}
+  .height-#{$space} {
+    height: #{$space+'%'};
+  }
+  // in percentage // usage .width-{percentage}
+  .width-#{$space} {
+    width: #{$space+'%'};
+  }
+
+  // in percentage // usage .min-height-{percentage}
+  .min-height-#{$space} {
+    min-height: #{$space+'%'} !important;
+  }
+  // in percentage // usage .min-width-{percentage}
+  .min-width-#{$space} {
+    min-width: #{$space+'%'} !important;
+  }
+
+  // in percentage // usage .max-height-{percentage}
+  .max-height-#{$space} {
+    max-height: #{$space+'%'} !important;
+  }
+  // in percentage // usage .max-width-{percentage}
+  .max-width-#{$space} {
+    max-width: #{$space+'%'} !important;
+  }
+
+  // in pixels // usage .mrg-{size}
+  .mrg-#{$space} {
+    margin: #{$space}px !important;
+  }
+  // in pixels // usage .pdd-{size}
+  .pdd-#{$space} {
+    padding: #{$space}px !important;
+  }
+
+  // in pixels
+  @each $side in $sides {
+    // usage .mrg-{top|left|right|bottom}-{size}
+    .mrg-#{$side}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    // usage .pdd-{top|left|right|bottom}-{size}
+    .pdd-#{$side}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+
+}
+
+.min-height-auto {
+  min-height: auto !important;
+}
+
+.max-height-none {
+  max-height: none !important;
+}
+
+.min-width-auto {
+  min-width: auto !important;
+}
+
+.max-width-none {
+  max-width: none !important;
+}
+
+.height-auto {
+  height: auto !important;
+}
+
+.width-auto {
+  width: auto !important;
+}
+
+// padding, margin, width, height helpers --< End
+
+// text align helpers --> Start
+$alignments: (center, left, right, justify, inherit);
+@each $alignment in $alignments {
+  .text-#{$alignment} {
+    text-align: #{$alignment} !important;
+  }
+}
+
+// text align helpers --< End
+
+// element float helpers --> Start
+$floats: (left, right, inherit);
+@each $float in $floats {
+  .pull-#{$float} {
+    float: #{$float} !important;
+  }
+}
+
+// element float helpers --< End
+
+// element position helpers --> Start
+$positions: (relative, absolute, sticky, fixed);
+@each $position in $positions {
+  .position-#{$position} {
+    position: #{$position} !important;
+  }
+}
+
+// element position helpers --< End
+
+// element display helpers ---> Start
+$display-options: (inline, block, contents, flex, grid, inline-block, table, none, initial, inherit);
+@each $display-option in $display-options {
+  .display-#{$display-option} {
+    display: #{$display-option} !important;
+  }
+}
+
+// element display helpers ---< End
+
+// element opacity helpers ---> Start
+$opacity-options: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90);
+@each $opacity-option in $opacity-options {
+  .opacity-#{$opacity-option} {
+    //opacity: #{$opacity-option / 100} !important; //getting warning, so using calc
+    opacity: calc(#{$opacity-option} / 100) !important;
+  }
+}
+
+// element opacity helpers ---< End
+
+// element overflow helpers ---> Start
+$overflow-options: (visible, hidden, scroll, auto, none);
+@each $overflow-option in $overflow-options {
+  .overflow-#{$overflow-option} {
+    overflow: #{$overflow-option} !important;
+  }
+}
+
+// element overflow helpers ---< End
+
+
+// element overflow helpers ---> Start
+$cursor-options: (default, grab, grabbing, move, no-drop, none, not-allowed, pointer);
+@each $cursor-option in $cursor-options {
+  .cursor-#{$cursor-option} {
+    cursor: #{$cursor-option} !important;
+  }
+}
+
+// element overflow helpers ---< End
+
+
+// element white-space helpers ---> Start
+$white-space-options: (normal, nowrap, pre, pre-line, pre-wrap, unset);
+@each $white-space-option in $white-space-options {
+  .white-space-#{$white-space-option} {
+    white-space: #{$white-space-option} !important;
+  }
+}
+
+// element white-space helpers ---< End
+
+
+// element flex helpers ---> Start
+$flex-options: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+@each $flex-option in $flex-options {
+  .flex-#{$flex-option} {
+    flex: #{$flex-option} !important;
+  }
+}
+
+// element flex helpers ---< End
+
+
+//  flex direction helpers ---> Start
+$fdir-options: (column, row, column-reverse, row-reverse, unset, inherit);
+@each $fdir-option in $fdir-options {
+  .flex-direction-#{$fdir-option} {
+    flex-direction: #{$fdir-option} !important;
+  }
+}
+
+// flex direction helpers ---< End
+
+//  justify-content helpers ---> Start
+$justify-content-options: (center, start, end, flex-start, flex-end, left, right, normal, space-between, space-around, space-evenly, stretch);
+@each $justify-content-option in $justify-content-options {
+  .justify-content-#{$justify-content-option} {
+    justify-content: #{$justify-content-option} !important;
+  }
+}
+
+// justify-content helpers ---< End
+
+//  align-items helpers ---> Start
+$align-items-options: (normal, stretch, center, start, end, flex-start, flex-end, baseline, inherit, initial);
+@each $align-items-option in $align-items-options {
+  .align-items-#{$align-items-option} {
+    align-items: #{$align-items-option} !important;
+  }
+}
+
+// align-items helpers ---< End
+
+//  text-decoration helpers ---> Start
+$text-decoration-options: (underline, none, inherit);
+@each $text-decoration-option in $text-decoration-options {
+  .text-decoration-#{$text-decoration-option} {
+    text-decoration: #{$text-decoration-option} !important;
+  }
+}
+
+// text-decoration helpers ---< End
+
+//  text-transform helpers ---> Start
+$text-transform-options: (none, capitalize, uppercase, lowercase, full-width);
+@each $text-transform-option in $text-transform-options {
+  .text-#{$text-transform-option} {
+    text-transform: #{$text-transform-option} !important;
+  }
+}
+
+// text-transform helpers ---< End
+
+//  visibility helpers ---> Start
+$visibility-options: (visible, hidden);
+@each $visibility-option in $visibility-options {
+  .visibility-#{$visibility-option} {
+    visibility: #{$visibility-option} !important;
+  }
+}
+
+// visibility helpers ---< End
+
+//  font weight ---> Start
+$font-weight-options: (100, 200, 300, 400, 500, 600, bold, bolder);
+@each $font-weight-option in $font-weight-options {
+  .font-weight-#{$font-weight-option} {
+    font-weight: #{$font-weight-option} !important;
+  }
+}
+
+// font weight ---< End
+
+@mixin display-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@mixin t-smooth-scroll-bar {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $scroll-bar-base-passive-color;
+    border-radius: 4.5px;
+  }
+
+  &::-webkit-scrollbar:vertical {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $scroll-bar-base-color;
+    border-radius: 20px;
+  }
+}
+
+@mixin t-smooth-black-scroll-bar {
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #B7E3FF !important;
+    border-radius: 4.5px;
+  }
+
+  &::-webkit-scrollbar:vertical {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #B7E3FF !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #07213C;
+    border-radius: 20px;
+  }
+}
+
+
+.success {
+  color: #00534F !important;
+}
+
+.error {
+  color: #FA6187 !important;
+}
+
+@for $i from 1 through 100 {
+  .pdd-right-#{$i} {
+    padding-right: #{$i+'px'} !important;
+  }
+  .pdd-left-#{$i} {
+    padding-left: #{$i+'px'} !important;
+  }
+}
+
+.word-break-break-word {
+  word-break: break-word;
+}
+
+//font-weights
+$font-weights: (
+        thin: $font-weight-thin,
+        regular: $font-weight-regular,
+        medium: $font-weight-medium,
+        thick: $font-weight-thick,
+        bold: $font-weight-bold
+);
+
+@each $name, $weight in $font-weights {
+  .font-weight-#{$name} {
+    font-weight: $weight;
+  }
+}

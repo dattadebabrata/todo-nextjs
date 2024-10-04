@@ -1,0 +1,206 @@
+@import "mixins";
+
+$font-family: 'Roboto';
+
+$primary-color: #35A79C;
+$secondary-color: #232323;
+$error-color: #E53742;
+$white: #ffffff;
+$black: #232323;
+$primary-light: #EBF6F5;
+$secondary-light-color:#344054;
+
+$default-color: #E8ECEF;
+$error-color: $error-color;
+$success-color: #00534F;
+$warning-color: #ffa335;
+$info-color: #1a67ff;
+
+$font-weight-thin: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-thick:600;
+$font-weight-bold: 700;
+
+$text-color-dark:#101828;
+$text-color-light:#10182899;
+
+
+$body-background-color: #FAFAFA;
+$body-color: #344054;
+
+$side-menu-transition: all 400ms cubic-bezier(.47, 1.64, .41, .8);
+//$text-light-1: #83909D;
+//$text-light-2: #6D6D6D;
+
+////branding
+//$branding-holder-height: 60;
+//$branding-holder-bg-color: #135C59;
+//$branding-holder-border: 1px solid #ABB6BE;
+//
+//// PAGE CONTENT
+//$page-content-bg-color: #f8f8f8;
+//
+//// Radio Button
+//$radio-button-height: 20px;
+//$radio-button-width: 20px;
+//$radio-button-inner-circle-height: 12px;
+//$radio-button-inner-circle-width: 12px;
+//$radio-button-font-size: 16px;
+//$radio-button-font-weight: $font-weight-normal;
+//$radio-button-font-family: $font-family;
+//$radio-button-border: 2px solid #8f8f8f;
+//$radio-button-active-border-color: $primary-color;
+//
+//// Status card Variables
+//$status-card-font-family: $font-family;
+//$status-card-color: #496370;
+//$status-card-font-weight: $font-weight-thin;
+//$status-card-default-bg-color: $default-color;
+//$status-card-error-bg-color: $error-color;
+//$status-card-warning-bg-color: $warning-color;
+//$status-card-success-bg-color: $success-color;
+//$status-card-info-bg-color: $info-color;
+//
+//// Progressbar Variables
+//$progressbar-default-bg-color: #D6E8FF;
+//$progressbar-filled-bg-color: #005BCA;
+//
+////File picker
+//$file-picker-border: 1px dashed $primary-color;
+//
+//// Helper Text Variables
+//$helper-text-font-family: $font-family;
+//$helper-text-font-size: 13px;
+//
+//// Input Variables
+//$input-background-color: #FCFCFC;
+//$input-border-color: #BFC6CD;
+//$input-select-border-color: #7EB2F6;
+//$input-error-border-color: $warn-color;
+//$input-error-color: $warn-color;
+//$input-border: 1px solid $input-border-color;
+//$input-border-radius: 3px;
+//$input-padding: 10px 12px;
+//$input-font-size: 14px;
+//$input-line-height: 28px;
+//$input-line-sm-height: 18px;
+//$input-line-md-height: 28px;
+//$input-color: $body-color;
+//$input-placeholder-color: #BFC6CD;
+//$input-font-weight: $font-weight-normal;
+//$input-font-family: $font-family;
+//$input-padding: 10px 12px;
+//
+//
+//// Label Variables
+//$label-color: $body-color;
+//$label-font-weight: $font-weight-normal;
+//$label-error-color: $warn-color;
+//$label-font-family: $font-family;
+
+////checkbox variables
+//$checkbox-base-color: #1479FF;
+//$checkbox-font-size: 16px;
+//$checkbox-size: 20px;
+//$checkbox-border-radius: 4px;
+//$checkbox-border: 1px solid #BFC6CD;
+//$checkbox-background-color: #FCFCFC;
+//$checkbox-error-border-color: $warn-color;
+//$checkbox-error-color: $warn-color;
+//$checkbox-disabled-opacity: 0.7;
+//$checkbox-accent-color: #07213C;
+//
+////datepicker variables
+//$date-picker-color: $body-color;
+//$date-picker-error-color: $warn-color;
+//$date-picker-placeholder-color: #1479FF;
+//$date-picker-border-color: #BFC6CD;
+//$date-picker-border: 1px solid $date-picker-border-color;
+//$date-picker-error-border: 1px solid $date-picker-error-color;
+//$date-picker-border-radius: 3px;
+//$date-picker-padding: 10px 12px;
+//$date-picker-font-size: 16px;
+//$date-picker-line-height: 28px;
+//
+//// Select
+//$select-line-height: 44px;
+//$select-font-size: 16px;
+//$select-font-weight: $font-weight-normal;
+//$select-font-family: $font-family;
+//$select-placeholder-color: #AFBAC0;
+//$select-border-color: #BFC6CD;
+//$select-border: 1px solid $select-border-color;
+//$select-error-color: $warn-color;
+//$select-error-border-color: $warn-color;
+//
+////radiobutton variables
+//$radio-button-base-color: #1479FF;
+//$radio-button-font-size: 16px;
+//$radio-button-size: 20px;
+//$radio-button-border-radius: 4px;
+//$radio-button-border: 1px solid #BFC6CD;
+//$radio-button-background-color: #FCFCFC;
+//$radio-button-error-border-color: $warn-color;
+//$radio-button-error-color: $warn-color;
+//$radio-button-disabled-opacity: 0.7;
+//
+//// Textarea Variables
+//$text-area-background-color: #FCFCFC;
+//$text-area-border-color: #BFC6CD;
+//$text-area-error-border-color: $warn-color;
+//$text-area-error-color: $warn-color;
+//$text-area-border: 1px solid $text-area-border-color;
+//$text-area-border-radius: 3px;
+//$text-area-padding: 10px 12px;
+//$text-area-font-size: 16px;
+//$text-area-line-height: 28px;
+//$text-area-height: 120px;
+//$text-area-color: $body-color;
+//$text-area-placeholder-color: #BFC6CD;
+//$text-area-font-weight: $font-weight-normal;
+//$text-area-font-family: $font-family;
+//
+//// icon button variables
+//$icon-button-size: 32px;
+//
+//// scroll bar variables
+//$scroll-bar-base-color: #1479FF;
+//$scroll-bar-base-passive-color: #B7E3FF;
+//
+////TIMELINE COMPONENT
+//$timeline-base-color: #1479FF;
+//$timeline-marker-default-bg-color: #B7E3FF;
+//$timeline-vertical-line-bg-color: #B7E3FF;
+//$timeline-vertical-line-active-bg-color: $timeline-base-color;
+//$timeline-marker-active-bg-color: $timeline-base-color;
+//$timeline-marker-completed-bg-color: $timeline-base-color;
+//$timeline-marker-in-progress-bg-color: #ffffff;
+//$timeline-marker-in-progress-border-color: $timeline-base-color;
+//
+// Header Component
+$header-background-color: #FFFFFF;
+$header-height: 61px;
+$header-spacer-height: $header-height;
+//
+////menu
+//$menu-active-link-bg-color: #2eb6a3;
+//$menu-hover-link-bg-color: #ffffff;
+//$menu-active-link-color: #ffffff;
+//$menu-hover-link-color: #1F3864;
+//$menu-link-color: #ffffff;
+//$menu-link-font-weight: 500;
+
+//File picker
+$file-picker-border: 1px dashed $primary-color;
+
+
+//side-menu
+$side-menu-full-width:235px;
+$side-menu-collapsed-width:81px;
+
+:root{
+  --Secondary-Steel-Dark: #344054;
+  --Neutral-Secondary-Text: #667085;
+  --Text-Midnight-Blue: #101828;
+}

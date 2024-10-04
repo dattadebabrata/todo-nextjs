@@ -1,0 +1,56 @@
+@import "../helpers";
+
+.MuiDrawer-paperAnchorRight {
+  border-radius: 8px 0 0 8px;
+}
+
+.drawer-container {
+  padding: 24px !important;
+  max-width: 593px;
+  min-width: 593px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    .drawer-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #232323;
+      font-weight: 500;
+      line-height: 24px;
+      font-size: 18px;
+    }
+
+    .drawer-close {
+      background: #F4F4F8;
+      border-radius: 50%;
+      height: 32px;
+      width: 32px;
+      cursor: pointer;
+      @include display-center();
+
+      svg {
+        //height: 14px;
+        //width: 14px;
+      }
+    }
+  }
+
+  .drawer-body {
+    flex: 1;
+    overflow: auto;
+  }
+
+  .drawer-actions {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+  }
+}

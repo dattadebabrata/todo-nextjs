@@ -1,0 +1,344 @@
+@import "mixins";
+@import "variables";
+@import "helpers";
+
+.app-layout {
+  display: flex;
+
+  .app-header-and-content-container {
+    flex: 1;
+    background-color: #FAFAFA;
+    overflow: hidden;
+
+    .header-container {
+      margin-bottom: $header-spacer-height;
+    }
+
+    .content-container {
+      padding: 24px 24px;
+      height: calc(100vh - $header-height);
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      .date-picker-field {
+        line-height: 20px;
+        font-size: 14px;
+        padding: 7px 14px;
+        border-radius: 8px;
+      }
+
+      .rs-picker-toggle-textbox {
+        font-size: 14px;
+        padding: 7px 14px !important;
+        border-radius: 8px;
+      }
+      .rs-picker-toggle-placeholder{
+        font-size: 16px;
+      }
+
+      .rs-stack-item {
+        line-height: 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.app-layout:has(.side-menu-collapsed) {
+  .app-header-and-content-container {
+    .app-header {
+      width: calc(100% - $side-menu-collapsed-width);
+    }
+  }
+}
+
+.app-version {
+  font-size: 10px;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
+
+.location-renderer {
+  display: flex;
+  align-items: center;
+}
+
+.vehicle-status-chip {
+  &.tag-component {
+    &.idle {
+      @include tag-style(#FFFAEB, #FFCB05);
+    }
+
+    &.moving {
+      @include tag-style(#e0e0ff, #000f64);
+    }
+
+    &.ignition_off {
+      @include tag-style(#FEF3F2, #E53742);
+    }
+
+    &.no_gps {
+      @include tag-style(#F2F4F7, #232323);
+    }
+
+    &.no_gprs {
+      @include tag-style(#F2F4F7, #232323);
+    }
+
+    &.charging {
+      @include tag-style(#ECFDF3, #1BA719);
+    }
+  }
+}
+
+.activity-event-chip {
+  &.tag-component {
+    &.handover, &.takeover {
+      @include tag-style(#FFFAEB, #FFCB05);
+    }
+
+    &.ignition_on {
+      @include tag-style(#e0e0ff, #000f64);
+    }
+
+    &.idle, &.ignition_off, &.idle, &.soc, &.low_soc, &.overspeed {
+      @include tag-style(#FEF3F2, #E53742);
+    }
+
+    //&.no_gps {
+    //  @include tag-style(#F2F4F7, #232323);
+    //}
+    //
+    //&.no_gprs {
+    //  @include tag-style(#F2F4F7, #232323);
+    //}
+
+    &.charging_on, &.full_soc {
+      @include tag-style(#ECFDF3, #1BA719);
+    }
+  }
+}
+
+.speed-renderer {
+  .speed-value {
+    &.slow {
+      color: #1c751c;
+    }
+
+    &.medium {
+      color: #d3a400;
+    }
+
+    &.high {
+      color: #bd0d0d;
+    }
+  }
+}
+
+.vehicle-soc {
+  &.low {
+    color: #bd0d0d;
+  }
+
+  &.medium {
+    color: #d3a400;
+  }
+
+  &.high {
+    color: #1c751c;
+  }
+}
+
+.client-sites-add-credentials-component__drawer, .client-sites-update-config-component__drawer {
+  .drawer-container {
+    min-width: 472px;
+    max-width: 472px;
+  }
+}
+
+.client-sites-update-config-component__drawer {
+  .data-label-value {
+    justify-content: space-between;
+
+    .data-label {
+      color: #656362;
+      font-size: 14px;
+      line-height: 20px;
+      margin-left: 0;
+    }
+
+    .data-value {
+      color: #232323;
+      font-weight: 500;
+    }
+  }
+}
+
+.t-form {
+  .t-form-description {
+    margin: 10px 0;
+  }
+}
+
+.extra-items {
+  color: $primary-color;
+  //text-decoration: underline;
+}
+
+.h-v-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  max-height: 800px;
+  height: calc(100vh - 250px);
+}
+
+.assign-update-vehicle-drawer {
+  .drawer-container {
+    min-width: 500px;
+    max-width: 500px;
+
+    .t-table-wrapper {
+      min-height: 400px;
+      max-height: calc(100vh - 140px);
+      height: calc(100vh - 140px);
+    }
+  }
+}
+
+.assign-vehicle-model-wrapper {
+  .modal-content-wrapper {
+    min-width: 500px;
+    max-width: 500px;
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .modal-title {
+        font-size: 18px;
+        font-weight: 500;
+        color: #232323;
+      }
+
+      .modal-close {
+        background: #F4F4F8;
+        border-radius: 50%;
+        height: 32px;
+        width: 32px;
+        cursor: pointer;
+        color: $primary-color;
+        @include display-center();
+      }
+    }
+  }
+}
+
+.admin-portal-filters-drawer {
+  .drawer-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    .t-form-controls {
+      height: calc(100vh - 200px);
+      overflow-y: auto;
+    }
+  }
+}
+
+.table-action-icons {
+  border-radius: 50%;
+  background: #F9FAFB;
+  padding: 5px;
+}
+
+.details-loading, .details-loading-failed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  max-height: 900px;
+  height: calc(100vh - 180px);
+}
+
+.ellipses-for-table-long-data {
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ellipses-for-table-short-data {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ellipses-for-table-medium-data {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ellipses-text{
+  width:100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-success {
+  color: $success-color !important;
+}
+
+.text-error {
+  color: $error-color !important;
+}
+
+.sub-title-case {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.title-case {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.details__navigate-back {
+  height: 40px;
+  aspect-ratio: 1;
+  margin-right: 12px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.display-cards-grid-view-wrapper {
+  display: grid;
+  gap: 16px;
+  row-gap: 16px;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+}
+
+.horizontal-line {
+  border-bottom: 1px solid #EAECF0;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.module-subtitle {
+  color: #101828;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
