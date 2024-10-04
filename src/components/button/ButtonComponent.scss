@@ -1,0 +1,515 @@
+@import "src/assets/styles/common";
+
+$button-border-radius: 8px;
+$button-font-family: $font-family;
+$button-font-weight: $font-weight-medium;
+$button-padding: 8px 14px;
+$button-border: 1px solid transparent;
+$button-spinner-border-width: 2px;
+$button-spinner-height: 20px;
+$button-spinner-width: 20px;
+$button-spinner-color-1: #ffffff;
+$button-spinner-color-2: #2AB7A3;
+
+$button-xs-font-size: 14px;
+$button-sm-font-size: 14px;
+$button-md-font-size: 14px;
+$button-lg-font-size: 16px;
+$button-xl-font-size: 16px;
+
+$button-xs-padding: 0 8px;
+$button-sm-padding: 8px 14px;
+$button-md-padding: 10px 16px;
+$button-lg-padding: 10px 18px;
+$button-xl-padding: 12px 20px;
+
+$button-xs-height: 24px;
+$button-sm-height: 36px;
+$button-md-height: 40px;
+$button-lg-height: 44px;
+$button-xl-height: 48px;
+
+$button-xs-spinner-height: 8px;
+$button-sm-spinner-height: 10px;
+$button-md-spinner-height: 16px;
+$button-lg-spinner-height: 20px;
+$button-xl-spinner-height: 24px;
+
+$button-xs-spinner-width: 8px;
+$button-sm-spinner-width: 10px;
+$button-md-spinner-width: 16px;
+$button-lg-spinner-width: 20px;
+$button-xl-spinner-width: 24px;
+
+$button-primary-spinner-color-1: #ffffff;
+$button-primary-spinner-color-2: #2AB7A3;
+
+$button-primary-contained-default-bg-color: #2AB7A3;
+$button-primary-contained-default-font-color: #FFFFFF;
+$button-primary-contained-hove-bg-color: #148E7D;
+$button-primary-contained-hover-font-color: #FFFFFF;
+$button-primary-contained-disabled-bg-color: #8ED5CC;
+$button-primary-contained-disabled-font-color: #FFFFFF;
+
+$button-primary-outlined-default-bg-color: #FFFFFF;
+$button-primary-outlined-default-border-color: #2AB7A3;
+$button-primary-outlined-font-color: #2AB7A3;
+$button-primary-outlined-hove-bg-color: #EFFDFB;
+$button-primary-outlined-hover-border-color: #2AB7A3;
+$button-primary-outlined-hover-font-color: #2AB7A3;
+$button-primary-outlined-disabled-bg-color: #FFFFFF;
+$button-primary-outlined-disabled-border-color: #8ED5CC;
+$button-primary-outlined-disabled-font-color: #8ED5CC;
+
+$button-primary-link-default-bg-color: inherit;
+$button-primary-link-font-color: #2AB7A3;
+$button-primary-link-hove-bg-color: inherit;
+$button-primary-link-hover-font-color: #148E7D;
+$button-primary-link-disabled-bg-color: inherit;
+$button-primary-link-disabled-font-color: #8ED5CC;
+
+$button-secondary-spinner-color-1: #ffffff;
+$button-secondary-spinner-color-2: #232323;
+
+$button-secondary-contained-default-bg-color: #232323;
+$button-secondary-contained-default-font-color: #FFFFFF;
+$button-secondary-contained-hove-bg-color: #232323;
+$button-secondary-contained-hover-font-color: #FFFFFF;
+$button-secondary-contained-disabled-bg-color: #232323;
+$button-secondary-contained-disabled-font-color: #FFFFFF;
+
+$button-secondary-outlined-default-bg-color: #FFFFFF;
+$button-secondary-outlined-default-border-color: #D0D5DD;
+$button-secondary-outlined-font-color: #344054;
+$button-secondary-outlined-hove-bg-color: #FFFFFF;
+$button-secondary-outlined-hover-border-color: #F9FAFB;
+$button-secondary-outlined-hover-font-color: #232323;
+$button-secondary-outlined-disabled-bg-color: #FFFFFF;
+$button-secondary-outlined-disabled-border-color: #EAECF0;
+$button-secondary-outlined-disabled-font-color: #D0D5DD;
+
+$button-secondary-link-default-bg-color: inherit;
+$button-secondary-link-font-color: #232323;
+$button-secondary-link-hove-bg-color: inherit;
+$button-secondary-link-hover-font-color: #475467;
+$button-secondary-link-disabled-bg-color: inherit;
+$button-secondary-link-disabled-font-color: #D0D5DD;
+
+$button-error-spinner-color-1: #ffffff;
+$button-error-spinner-color-2: #E53742;
+
+$button-error-contained-default-bg-color: #E53742;
+$button-error-contained-default-font-color: #FFFFFF;
+$button-error-contained-hove-bg-color: #B42318;
+$button-error-contained-hover-font-color: #FFFFFF;
+$button-error-contained-disabled-bg-color: #FECDCA;
+$button-error-contained-disabled-font-color: #FFFFFF;
+
+$button-error-outlined-default-bg-color: #FFFFFF;
+$button-error-outlined-default-border-color: #E53742;
+$button-error-outlined-font-color: #E53742;
+$button-error-outlined-hove-bg-color: #FEF3F2;
+$button-error-outlined-hover-border-color: #E53742;
+$button-error-outlined-hover-font-color: #E53742;
+$button-error-outlined-disabled-bg-color: #FFFFFF;
+$button-error-outlined-disabled-border-color: #FECDCA;
+$button-error-outlined-disabled-font-color: #FDA29B;
+
+$button-error-link-default-bg-color: inherit;
+$button-error-link-font-color: #E53742;
+$button-error-link-hove-bg-color: inherit;
+$button-error-link-hover-font-color: #B42318;
+$button-error-link-disabled-bg-color: inherit;
+$button-error-link-disabled-font-color: #FECDCA;
+
+.button-component {
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  font-family: $button-font-family, sans-serif;
+  outline: none;
+  transition-duration: 0.2s;
+  position: relative;
+  padding: $button-padding;
+  font-weight: $button-font-weight;
+  border: none;
+  @include display-center();
+
+  .button-contents {
+    @include display-center();
+  }
+
+  .button-text {
+
+    &.xs {
+      font-size: $button-xs-font-size;
+    }
+
+    &.sm {
+      font-size: $button-sm-font-size;
+    }
+
+    &.md {
+      font-size: $button-md-font-size;
+    }
+
+    &.lg {
+      font-size: $button-lg-font-size;
+    }
+
+    &.xl {
+      font-size: $button-xl-font-size;
+    }
+
+  }
+
+  .button-prefix, .button-suffix {
+    position: relative;
+    top: 2px;
+
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+
+  }
+
+  .button-prefix {
+    margin-right: 8px;
+  }
+
+  .button-suffix {
+    margin-left: 8px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &.loading {
+    .button-contents {
+      visibility: hidden;
+    }
+
+    &::before {
+      content: " ";
+      position: absolute;
+      top: calc(50% - 8px);
+      left: calc(50% - 8px);
+      border: $button-spinner-border-width solid $button-spinner-color-1;
+      border-top: $button-spinner-border-width solid $button-spinner-color-2;
+      width: $button-spinner-width;
+      height: $button-spinner-height;
+      border-radius: 50%;
+      -webkit-animation: loaderSpin 0.5s linear infinite; /* Safari */
+      animation: loaderSpin 0.5s linear infinite;
+    }
+  }
+
+  &.xs {
+    font-size: $button-xs-font-size;
+    padding: $button-xs-padding;
+    height: $button-xs-height;
+    min-height: $button-xs-height;
+
+    .button-prefix, .button-suffix {
+      top: 1px;
+    }
+
+    .button-prefix {
+      margin-right: 4px;
+    }
+
+    .button-suffix {
+      margin-left: 4px;
+    }
+
+    &::before {
+      top: calc(50% - 3px);
+      left: calc(50% - 3px);
+      width: $button-xs-spinner-width;
+      height: $button-xs-spinner-height;
+    }
+  }
+
+  &.sm {
+    font-size: $button-sm-font-size;
+    padding: $button-sm-padding;
+    height: $button-sm-height;
+    min-height: $button-sm-height;
+
+    .button-prefix, .button-suffix {
+      top: 1px;
+    }
+
+    .button-prefix {
+      margin-right: 4px;
+    }
+
+    .button-suffix {
+      margin-left: 8px;
+    }
+
+    &::before {
+      top: calc(50% - 6px);
+      left: calc(50% - 6px);
+      width: $button-sm-spinner-width;
+      height: $button-sm-spinner-height;
+      scale: 2;
+    }
+  }
+
+  &.md {
+    font-size: $button-md-font-size;
+    padding: $button-md-padding;
+    height: $button-md-height;
+    min-height: $button-md-height;
+
+    &::before {
+      top: calc(50% - 8px);
+      left: calc(50% - 8px);
+      width: $button-md-spinner-width;
+      height: $button-md-spinner-height;
+    }
+  }
+
+  &.lg {
+    font-size: $button-lg-font-size;
+    padding: $button-lg-padding;
+    height: $button-lg-height;
+    min-height: $button-lg-height;
+
+    &::before {
+      top: calc(50% - 10px);
+      left: calc(50% - 10px);
+      width: $button-lg-spinner-width;
+      height: $button-lg-spinner-height;
+    }
+  }
+
+  &.xl {
+    font-size: $button-xl-font-size;
+    padding: $button-xl-padding;
+    height: $button-xl-height;
+    min-height: $button-xl-height;
+
+    &::before {
+      top: calc(50% - 12px);
+      left: calc(50% - 12px);
+      width: $button-xl-spinner-width;
+      height: $button-xl-spinner-height;
+    }
+  }
+
+
+  &.contained {
+
+  }
+
+  &.outlined {
+    border: 1px solid;
+    background: inherit;
+  }
+
+  &.link {
+    background: inherit;
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: 0 5px 4px rgba(7, 33, 60, 0.05);
+    }
+  }
+
+  &.primary {
+
+    &.loading {
+      &::before {
+        border-color: $button-primary-spinner-color-1;
+        border-top-color: $button-primary-spinner-color-2;
+      }
+    }
+
+    &.link {
+
+    }
+
+    &.contained {
+      background: $button-primary-contained-default-bg-color;
+      color: $button-primary-contained-default-font-color;
+
+      &:hover {
+        background: $button-primary-contained-hove-bg-color;
+        color: $button-primary-contained-hover-font-color;
+      }
+
+      &:disabled {
+        background: $button-primary-contained-disabled-bg-color;
+        color: $button-primary-contained-disabled-font-color;
+      }
+    }
+
+    &.outlined {
+      background: $button-primary-outlined-default-bg-color;
+      border-color: $button-primary-outlined-default-border-color;
+      color: $button-primary-outlined-font-color;
+
+      &:hover {
+        background: $button-primary-outlined-hove-bg-color;
+        border-color: $button-primary-outlined-hover-border-color;
+        color: $button-primary-outlined-hover-font-color;
+      }
+
+      &:disabled {
+        background: $button-primary-outlined-disabled-bg-color;
+        border-color: $button-primary-outlined-disabled-border-color;
+        color: $button-primary-outlined-disabled-font-color;
+      }
+    }
+
+    &.link {
+      background: $button-primary-link-default-bg-color;
+      color: $button-primary-link-font-color;
+
+      &:hover {
+        background: $button-primary-link-hove-bg-color;
+        color: $button-primary-link-hover-font-color;
+      }
+
+      &:disabled {
+        background: $button-primary-link-disabled-bg-color;
+        color: $button-primary-link-disabled-font-color;
+      }
+    }
+  }
+
+  &.secondary {
+
+    &.loading {
+      &::before {
+        border-color: $button-secondary-spinner-color-1;
+        border-top-color: $button-secondary-spinner-color-2;
+      }
+    }
+
+    &.link {
+
+    }
+
+    &.contained {
+      background: $button-secondary-contained-default-bg-color;
+      color: $button-secondary-contained-default-font-color;
+
+      &:hover {
+        background: $button-secondary-contained-hove-bg-color;
+        color: $button-secondary-contained-hover-font-color;
+      }
+
+      &:disabled {
+        background: $button-secondary-contained-disabled-bg-color;
+        color: $button-secondary-contained-disabled-font-color;
+      }
+    }
+
+    &.outlined {
+      background: $button-secondary-outlined-default-bg-color;
+      border-color: $button-secondary-outlined-default-border-color;
+      color: $button-secondary-outlined-font-color;
+
+      &:hover {
+        background: $button-secondary-outlined-hove-bg-color;
+        border-color: $button-secondary-outlined-hover-border-color;
+        color: $button-secondary-outlined-hover-font-color;
+      }
+
+      &:disabled {
+        background: $button-secondary-outlined-disabled-bg-color;
+        border-color: $button-secondary-outlined-disabled-border-color;
+        color: $button-secondary-outlined-disabled-font-color;
+      }
+    }
+
+    &.link {
+      background: $button-secondary-link-default-bg-color;
+      color: $button-secondary-link-font-color;
+
+      &:hover {
+        background: $button-secondary-link-hove-bg-color;
+        color: $button-secondary-link-hover-font-color;
+      }
+
+      &:disabled {
+        background: $button-secondary-link-disabled-bg-color;
+        color: $button-secondary-link-disabled-font-color;
+      }
+    }
+  }
+
+  &.error {
+    &.loading {
+      &::before {
+        border-color: $button-error-spinner-color-1;
+        border-top-color: $button-error-spinner-color-2;
+      }
+    }
+
+    &.link {
+
+    }
+
+    &.contained {
+      background: $button-error-contained-default-bg-color;
+      color: $button-error-contained-default-font-color;
+
+      &:hover {
+        background: $button-error-contained-hove-bg-color;
+        color: $button-error-contained-hover-font-color;
+      }
+
+      &:disabled {
+        background: $button-error-contained-disabled-bg-color;
+        color: $button-error-contained-disabled-font-color;
+      }
+    }
+
+    &.outlined {
+      background: $button-error-outlined-default-bg-color;
+      border-color: $button-error-outlined-default-border-color;
+      color: $button-error-outlined-font-color;
+
+      &:hover {
+        background: $button-error-outlined-hove-bg-color;
+        border-color: $button-error-outlined-hover-border-color;
+        color: $button-error-outlined-hover-font-color;
+      }
+
+      &:disabled {
+        background: $button-error-outlined-disabled-bg-color;
+        border-color: $button-error-outlined-disabled-border-color;
+        color: $button-error-outlined-disabled-font-color;
+      }
+    }
+
+    &.link {
+      background: $button-error-link-default-bg-color;
+      color: $button-error-link-font-color;
+
+      &:hover {
+        background: $button-error-link-hove-bg-color;
+        color: $button-error-link-hover-font-color;
+      }
+
+      &:disabled {
+        background: $button-error-link-disabled-bg-color;
+        color: $button-error-link-disabled-font-color;
+      }
+    }
+  }
+
+}

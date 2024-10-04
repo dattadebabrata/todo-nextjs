@@ -1,0 +1,40 @@
+@import "src/assets/styles/common";
+
+$label-font-family: $font-family;
+$label-font-weight: $font-weight-medium;
+$label-color: #344054;
+$label-error-color: $error-color;
+$label-line-height: 20px;
+$label-margin-bottom: 6px;
+$label-font-size: 14px;
+
+$label-optional-color: #83909D;
+$label-optional-font-size: 12px;
+$label-optional-margin-left: 6px;
+
+.label-component {
+  font-family: $label-font-family, sans-serif;
+  font-size: $label-font-size;
+  color: $label-color;
+  line-height: $label-line-height;
+  font-weight: $label-font-weight;
+  margin-bottom: $label-margin-bottom;
+
+  .optional {
+    font-size: $label-optional-font-size;
+    color: $label-optional-color;
+    font-weight: $font-weight-regular;
+    margin-left: $label-optional-margin-left;
+  }
+
+  .required {
+    font-size: $label-optional-font-size;
+    font-weight: $font-weight-regular;
+    margin-left: $label-optional-margin-left;
+    color: $label-error-color;
+  }
+
+  &.has-error {
+    color: $label-error-color;
+  }
+}

@@ -1,0 +1,10 @@
+.error-component {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+
+  .helper-text-component {
+    white-space: nowrap;
+    font-size: 12px;
+  }
+}

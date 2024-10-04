@@ -1,0 +1,119 @@
+@import "src/assets/styles/common";
+
+$input-color: $body-color;
+$input-border-radius: 8px;
+$input-padding: 10px 14px;
+$suffix-icon-size: 24px;
+$input-font-size: 14px;
+$input-line-height: 24px;
+$input-height: 44px;
+$input-font-weight: $font-weight-regular;
+$input-font-family: $font-family;
+$input-placeholder-color: #667085;
+$input-margin-bottom: 0px;
+
+// default
+$input-default-background-color: #FCFCFC;
+$input-default-border-color: #D0D5DD;
+
+// disabled
+$input-disabled-border-color: #D0D5DD;
+$input-disabled-background-color: #FCFCFC;
+
+// focused
+$input-active-border-color: #232323;
+
+// error
+$input-error-border-color: $error-color;
+
+$input-border: 1px solid $input-default-border-color;
+
+// md input
+$input-md-height: 36px;
+
+.input-component {
+  //position: relative;
+  //margin: 0 0 24px;
+  width: 320px;
+
+  .input-wrapper{
+    position: relative;
+  }
+
+  &.fullWidth {
+    width: 100%;
+
+    .input-field {
+      width: 100%;
+    }
+  }
+
+  .input-field {
+    width: 100%;
+    background: $input-default-background-color;
+    color: $input-color;
+    border-radius: $input-border-radius;
+    outline: none;
+    padding: $input-padding;
+    border: $input-border;
+    font-size: $input-font-size;
+    line-height: $input-line-height;
+    font-weight: $input-font-weight;
+    font-family: $input-font-family;
+    height: $input-height;
+    margin-bottom: $input-margin-bottom;
+
+    &.has-suffix {
+      padding-right: $suffix-icon-size + 16px;
+    }
+
+    &.has-prefix {
+      padding-left: $suffix-icon-size + 16px;
+    }
+
+    &.md {
+      height: $input-md-height;
+    }
+
+    &::placeholder {
+      color: $input-placeholder-color;
+    }
+
+    &:disabled {
+      background: $input-disabled-background-color;
+      cursor: not-allowed;
+    }
+
+    &:hover {
+    }
+
+    &:focus, &:active {
+      border-color: $input-active-border-color;
+    }
+
+    &.has-error {
+      border-color: $input-error-border-color;
+    }
+
+    &.text-transform {
+      text-transform: capitalize !important;
+    }
+  }
+
+  .suffix-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .prefix-icon {
+    position: absolute;
+    height: 20px;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}
