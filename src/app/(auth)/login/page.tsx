@@ -4,7 +4,7 @@ import {useCallback, useState} from "react";
 import InputComponent from "@/components/form-controls/input/InputComponent";
 import PasswordComponent from "@/components/form-controls/password/PasswordComponent";
 import ButtonComponent from "@/components/button/ButtonComponent";
-import ImageConfig from "@/constrant/ImageConfig";
+import ImageConfig from "@/constants/ImageConfig";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
 

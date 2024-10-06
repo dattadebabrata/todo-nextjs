@@ -1,0 +1,28 @@
+.mantine-drawer-component {
+  .mantine-drawer-header {
+    .mantine-Drawer-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      text-transform: capitalize;
+    }
+  }
+
+  .mantine-drawer-body {
+  }
+
+  .mantine-drawer-footer {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    column-gap: 24px;
+    align-items: center;
+    padding: var(--mb-padding, var(--mantine-spacing-md));
+    padding-inline-end: calc(var(--mb-padding, var(--mantine-spacing-md)) - calc(0.3125rem * var(--mantine-scale)));
+    position: sticky;
+    background-color: var(--mantine-color-body);
+    z-index: 1000;
+    min-height: calc(3.75rem * var(--mantine-scale));
+    transition: padding-inline-end 100ms;
+  }
+}

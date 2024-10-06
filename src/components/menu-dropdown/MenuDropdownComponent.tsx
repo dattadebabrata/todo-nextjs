@@ -1,55 +1,101 @@
 import "./MenuDropdownComponent.scss";
-import React, {ReactNode, useCallback, useRef, useState} from "react";
-// import OutsideClickListener from "../../utils/outside-click-listener";
+import {Menu, FloatingPlacement, FloatingSide, MantineRadius, MantineColor} from '@mantine/core';
+import {useClickOutside} from '@mantine/hooks';
+import {MutableRefObject, ReactNode} from "react";
 
-interface MenuDropdownComponentProps {
-    menuBase: ReactNode | null;
+interface MenuComponentProps {
+    trigger?: 'hover' | 'click-hover' | 'click',
+    isOpen?: boolean,
+    onClose?: () => void;
+    offset?: {
+        mainAxis: number,
+        crossAxis: number,
+        alignmentAxis: number,
+    } | number;
+    position?: FloatingSide | `${FloatingSide}-${FloatingPlacement}`;
+    withArrow?: boolean;
+    width?: number | string;
+    radius?: MantineRadius | number;
+    zIndex?: string | number;
 }
 
-const MenuDropdownComponent = (props: React.PropsWithChildren<MenuDropdownComponentProps>) => {
-
-    const {menuBase, children} = props;
-    const menuRef = useRef(null);
-    // const [listening, setListening] = useState(false);
-    const [isOpen, setIsOpen] = useState<boolean>(false);
-
-    const toggleMenuDropDown = useCallback(() => {
-        setIsOpen(!isOpen);
-    }, [isOpen]);
-
-    // useEffect(OutsideClickListener(listening, setListening, menuRef, setIsOpen), [OutsideClickListener, listening, setListening, menuRef, setIsOpen]);
+const MenuDropdownComponent = (props: MenuComponentProps) => {
+    const {
+        target,
+        isOpen,
+        onClose,
+        trigger,
+        children,
+        offset,
+        position,
+        withArrow,
+        width,
+        radius,
+        zIndex
+    } = props;
+    const menuRef: MutableRefObject<unknown> = useClickOutside(() => {
+        onClose && onClose();
+    });
 
     return (
-        <div ref={menuRef} className={'menu-dropdown-component-menu ' + (isOpen ? "active" : "")}>
-            <div onClick={toggleMenuDropDown}>
-                {menuBase}
-            </div>
-            <ul className="menu-dropdown-menu__content" onClick={toggleMenuDropDown}>
+        <Menu
+            trigger={trigger}
+            transitionProps={{transition: 'scale-y', duration: 200}}
+            className={'menu-dropdown-component'}
+            offset={offset}
+            opened={isOpen}
+            position={position}
+            width={width}
+            withArrow={withArrow}
+            radius={radius}
+            zIndex={zIndex}
+            withinPortal={true}
+        >
+            <Menu.Target>
+                {target}
+            </Menu.Target>
+            <Menu.Dropdown
+                ref={menuRef}>
                 {children}
-            </ul>
-        </div>
+            </Menu.Dropdown>
+        </Menu>
     );
 
 };
 
 export default MenuDropdownComponent;
 
-// ****************************** USAGE ****************************** //
+export const MenuDropdownItems = (props: {
+    leftElement?: ReactNode,
+    rightElement?: ReactNode,
+    children: ReactNode,
+    color?: MantineColor | 'primary' | 'secondary',
+    disabled?: boolean,
+    onClick?: (event: React.MouseEvent<unknown>) => void,
+    closeMenuOnClick?: boolean,
+    // onMouseEnter?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void,
+    // onMouseLeave?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void,
+}) => {
+    const {
+        leftElement,
+        rightElement,
+        children,
+        color,
+        closeMenuOnClick = true,
+        disabled,
+        onClick
+    } = props;
+    return <Menu.Item
+        leftSection={leftElement}
+        rightSection={rightElement}
+        color={color as MantineColor}
+        closeMenuOnClick={closeMenuOnClick}
+        disabled={disabled} onClick={onClick}>
+        {children}
+    </Menu.Item>
+}
 
-// const [isContextMenuOpened, setIsContextMenuOpened] = useState<boolean | undefined>(undefined);
-//
-// <MenuDropdownComponent
-//     menuBase={
-//         <ButtonComponent>Context Menu</ButtonComponent>
-//     }
-//     menuOptions={[
-//         <CheckBoxComponent label={"Option 1"}/>,
-//         <CheckBoxComponent label={"Option 2"}/>,
-//         <CheckBoxComponent label={"Close"} onChange={()=>{setIsContextMenuOpened(false)}}/>,
-//     ]}
-//     isOpen={isContextMenuOpened}
-//     onOpen={()=>{setIsContextMenuOpened(true)}}
-//     onClose={()=>{setIsContextMenuOpened(false)}}
-// />
-
-// ****************************** USAGE ****************************** //
+export const MenuLabel = (props: { children: ReactNode }) => {
+    const {children} = props;
+    return <Menu.Label>{children}</Menu.Label>
+}

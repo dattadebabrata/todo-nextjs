@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/utils';
-import { User } from '@/models/userModel';
+import { User } from '@/models/db/userModel';
 import { compare } from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { serialize } from 'cookie';
